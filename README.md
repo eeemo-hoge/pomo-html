@@ -1,15 +1,25 @@
-# pomo-html
+# ポモドーロタイマー
 
-Pomo Android app's web version. A Japanese Pomodoro timer that runs in your browser.
+作業と休憩を切り替えて集中をサポートする、日本語のポモドーロタイマーです。インストールやビルドは必要ありません。
 
-## Run locally
+## 起動方法
 
-From the repository root, start a static web server:
+1. このリポジトリから `index.html` をダウンロードします（またはリポジトリをクローンします）。
+2. `index.html` をダブルクリックするか、ブラウザにドラッグ＆ドロップして開きます。
 
-```sh
-python3 -m http.server 8000
-```
+Pythonなどのサーバーを起動する必要はありません。HTMLファイルをブラウザで開くだけで使えます。
 
-Then open <http://localhost:8000>.
+## 使い方
 
-The timer keeps track of elapsed time while the browser tab is in the background. Allow browser audio after pressing Start to hear notification sounds.
+1. 作業時間や休憩時間などを設定します。初期値のままでも使えます。
+2. **開始**を押してタイマーを始めます。
+3. 作業中は**今すぐ休憩(追加休憩)**、休憩中は**作業に戻る**を押すと、いつでも切り替えられます。
+4. **中止**を押すとタイマーを終了して設定画面に戻ります。
+
+作業中に設定した時間が経つと、ストレッチやリフレッシュの案内が表示されます。作業・休憩の切り替わり時にも案内が表示されます。
+
+## 補足
+
+- 通知音は、開始時にブラウザが音声再生を許可している場合に鳴ります。
+- タブを別の画面に切り替えても、戻ったときに経過時間が反映されます。
+- 設定はページを再読み込みすると初期値に戻ります。
