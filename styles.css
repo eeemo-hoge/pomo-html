@@ -1,0 +1,277 @@
+:root {
+  color-scheme: light;
+  font-family: Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #1c1b1f;
+  background: #fff7ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --surface: #fff7ff;
+  --on-surface: #1c1b1f;
+  --primary: #6750a4;
+  --on-primary: #ffffff;
+  --outline: #79747e;
+  --track: #eaddff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  background: var(--surface);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.app {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  padding: 24px;
+}
+
+.setup-screen {
+  width: min(100%, 520px);
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.setup-screen h1 {
+  margin-bottom: 20px;
+}
+
+.settings-fields {
+  display: grid;
+  gap: 12px;
+}
+
+.setting-field {
+  position: relative;
+  display: grid;
+  min-height: 76px;
+  align-content: center;
+  padding: 10px 16px 8px;
+  border: 1px solid var(--outline);
+  border-radius: 4px;
+}
+
+.setting-field:focus-within {
+  border: 2px solid var(--primary);
+  padding: 9px 15px 7px;
+}
+
+.setting-field label {
+  margin-bottom: 3px;
+  color: #49454f;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.setting-field input {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: var(--on-surface);
+  background: transparent;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.form-error {
+  margin: 12px 0 0;
+  color: #b3261e;
+  font-size: 14px;
+}
+
+.button {
+  min-height: 56px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: filter 120ms ease, transform 120ms ease;
+}
+
+.button:hover {
+  filter: brightness(0.96);
+}
+
+.button:active {
+  transform: scale(0.985);
+}
+
+.button:focus-visible,
+.dialog-confirm:focus-visible {
+  outline: 3px solid #9a82db;
+  outline-offset: 3px;
+}
+
+.button-primary {
+  color: var(--on-primary);
+  background: var(--primary);
+}
+
+.start-button {
+  width: 100%;
+  min-height: 64px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.timer-screen {
+  display: flex;
+  width: min(100%, 760px);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.phase-label {
+  font-size: 28px;
+}
+
+.session-label {
+  margin: 0;
+  font-size: 18px;
+}
+
+.countdown {
+  margin: 4px 0 12px;
+  font-size: clamp(56px, 12vw, 72px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.progress-track {
+  width: calc(100% + 48px);
+  height: 4px;
+  overflow: hidden;
+  background: var(--track);
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: var(--primary);
+  transition: width 350ms linear;
+}
+
+.progress-label {
+  margin: 10px 0 24px;
+  font-size: 18px;
+}
+
+.timer-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.button-outline {
+  min-width: 132px;
+  border: 1px solid #c9c5cc;
+  color: #49454f;
+  background: transparent;
+}
+
+.reminder-dialog {
+  width: min(90vw, 600px);
+  max-height: min(90vh, 720px);
+  padding: 32px;
+  border: 0;
+  border-radius: 28px;
+  color: var(--on-surface);
+  background: #f0e7f2;
+  box-shadow: 0 8px 32px #0003;
+}
+
+.reminder-dialog::backdrop {
+  background: #0009;
+}
+
+.reminder-dialog h2 {
+  margin: 0 0 24px;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 400;
+}
+
+.reminder-dialog ul {
+  margin: 0;
+  padding-left: 1.2em;
+  color: #49454f;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.dialog-confirm {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--primary);
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 24px 12px;
+  }
+
+  .timer-screen {
+    gap: 14px;
+  }
+
+  .progress-track {
+    width: calc(100% + 24px);
+  }
+
+  .reminder-dialog {
+    padding: 28px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

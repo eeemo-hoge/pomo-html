@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff7ff">
+    <meta name="description" content="作業と休憩を切り替えて集中をサポートするポモドーロタイマーです。">
+    <title>ポモドーロタイマー</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <section id="setup-screen" class="setup-screen" aria-labelledby="app-title">
+        <h1 id="app-title">ポモドーロタイマー</h1>
+        <form id="settings-form" novalidate>
+          <div id="settings-fields" class="settings-fields"></div>
+          <p id="form-error" class="form-error" role="alert" hidden>すべて1以上の数値を入力してください</p>
+          <button class="button button-primary start-button" type="submit">開始</button>
+        </form>
+      </section>
+
+      <section id="timer-screen" class="timer-screen" aria-live="polite" hidden>
+        <h1 id="phase-label" class="phase-label"></h1>
+        <p id="session-label" class="session-label"></p>
+        <p id="countdown" class="countdown" role="timer" aria-label="残り時間"></p>
+        <div
+          id="progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-label="現在のフェーズの進行状況"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-label" class="progress-label"></p>
+        <div class="timer-actions">
+          <button id="break-button" class="button button-primary" type="button"></button>
+          <button id="reset-button" class="button button-outline" type="button">中止</button>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="reminder-dialog" class="reminder-dialog" aria-labelledby="reminder-title">
+      <h2 id="reminder-title">ストレッチ&amp;リフレッシュ</h2>
+      <ul>
+        <li>首と肩を伸ばす</li>
+        <li>立ち上がる</li>
+        <li>深呼吸する</li>
+        <li>見えるものを5つ数える</li>
+        <li>腕と脚を振る</li>
+        <li>何度かまばたきする</li>
+        <li>窓の外を眺める</li>
+        <li>数分、瞑想する</li>
+      </ul>
+      <form method="dialog" class="dialog-actions">
+        <button class="dialog-confirm" type="submit">OK</button>
+      </form>
+    </dialog>
+  </body>
+</html>
