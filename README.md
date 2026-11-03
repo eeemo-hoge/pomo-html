@@ -2,14 +2,7 @@
 
 Pomo Android app's web version. A Japanese Pomodoro timer that runs in your browser.
 
-## Run locally
+## How to use 
+git clone でクローンし、対象のディレクトリに移動したあと、HTMLファイルをブラウザで開いて下さい。
 
-From the repository root, start a static web server:
-
-```sh
-python3 -m http.server 8000
-```
-
-Then open <http://localhost:8000>.
-
-The timer keeps track of elapsed time while the browser tab is in the background. Allow browser audio after pressing Start to hear notification sounds.
+git clone this repo, and move to directory, open html file by web browser etc.
