@@ -7,5 +7,4 @@ git clone でクローンし、対象のディレクトリに移動したあと�
 
 git clone this repo, and move to directory, open html file by web browser etc.
 
-[description](LICENSE)
 license is "[LICENSE](LICENSE)"
